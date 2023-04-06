@@ -2,6 +2,11 @@
 
 ## Installation Steps:
 
+### Pre-requisite
+- Kubernetes (via Minikube or Docker Desktop)
+- kubectl
+- Python3
+
 ### Create Kuberneted and Kafka cluster environment
 
 1. `kubectl create namespace kafka`
