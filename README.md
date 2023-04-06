@@ -8,13 +8,13 @@
 - Python3
 
 ### Create Kubernetes and Kafka cluster environment
-
+In a terminal
 1. `kubectl create namespace kafka`
 2. `kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka`
 3. `kubectl apply -f dgss-kafka.yaml -n kafka`
 4. `kubectl wait kafka/my-cluster --for=condition=Ready --timeout=300s -n kafka`
 
-### To run Python application host machine's local environment
+### To run Python application on host machine's local environment
 
 1. `pip -r requirements.txt`
 2. `python kafka_consumer.py`
