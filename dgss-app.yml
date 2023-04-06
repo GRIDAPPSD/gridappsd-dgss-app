@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dgss-gridappsd-app-service
+  name: dgss-app
 spec:
   selector:
-    app: dgss-gridappsd-app
+    app: dgss-app
   ports:
   - protocol: "TCP"
     port: 6000
@@ -13,22 +13,23 @@ spec:
 
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: dgss-gridappsd-app
+  name: dgss-app
 spec:
   selector:
     matchLabels:
-      app: dgss-gridappsd-app
+      app: dgss-app
+  serviceName: "dgss-app"
   replicas: 4
   template:
     metadata:
       labels:
-        app: dgss-gridappsd-app
+        app: dgss-app
     spec:
       containers:
-      - name: dgss-gridappsd-app
-        image: dgss-gridappsd-app:latest
+      - name: dgss-app
+        image: dgss-app:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
