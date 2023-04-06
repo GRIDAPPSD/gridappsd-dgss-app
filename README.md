@@ -7,7 +7,7 @@
 - kubectl
 - Python3
 
-### Create Kuberneted and Kafka cluster environment
+### Create Kubernetes and Kafka cluster environment
 
 1. `kubectl create namespace kafka`
 2. `kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka`
