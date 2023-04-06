@@ -9,10 +9,12 @@
 
 ### Create Kubernetes and Kafka cluster environment
 In a terminal
-1. `kubectl create namespace kafka`
-2. `kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka`
-3. `kubectl apply -f dgss-kafka.yaml -n kafka`
-4. `kubectl wait kafka/my-cluster --for=condition=Ready --timeout=300s -n kafka`
+1. `git clone https://github.com/GRIDAPPSD/gridappsd-dgss-app.git`
+2. `cd gridappsd-dgss-app`
+3. `kubectl create namespace kafka`
+4. `kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka`
+5. `kubectl apply -f dgss-kafka.yaml -n kafka`
+6. `kubectl wait kafka/my-cluster --for=condition=Ready --timeout=300s -n kafka`
 
 ### To run Python application on host machine's local environment
 
