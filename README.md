@@ -26,7 +26,7 @@ In a terminal
 ### To run Python application in Kubernetes
 
 1. `docker build -f Dockerfile -t dgss-app:latest .`
-2. `kubectl apply -f dgss-app.yaml`
+2. `kubectl apply -f dgss-app.yaml -n kafka`
 3. `kubectl exec -it dgss-app-0 -- /bin/bash`
 4. `python kafka_consumer.py`
 5. In another terminal: `python kafka_producer.py`
