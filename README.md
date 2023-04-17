@@ -18,7 +18,7 @@ In a terminal
 
 ### To run Python application on host machine's local environment
 
-1. `pip -r requirements.txt`
+1. `pip install -r requirements.txt`
 2. `cd src`
 3. `python kafka_consumer.py`
 4. In another terminal: `python kafka_producer.py`
