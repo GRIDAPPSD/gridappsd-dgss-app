@@ -2,7 +2,12 @@
 
 ## Installation Steps:
 
-### Create Kuberneted and Kafka cluster environment
+### Pre-requisite
+- Kubernetes (via Minikube or Docker Desktop)
+- kubectl
+- Python3
+
+### Create Kubernetes and Kafka cluster environment
 
 1. `kubectl create namespace kafka`
 2. `kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka`
