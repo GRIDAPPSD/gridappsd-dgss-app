@@ -5,7 +5,7 @@ metadata:
 spec:
   kafka:
     version: 3.4.0
-    replicas: 1
+    replicas: 3
     listeners:
       - name: plain
         port: 9092
@@ -15,10 +15,12 @@ spec:
         port: 9094
         type: nodeport
         tls: false
-        configuration: 
-            brokers: 
-            - broker: 0 
-              advertisedHost: localhost
+        configuration:
+          bootstrap:
+            nodePort: 31402
+          brokers: 
+          - broker: 0 
+            advertisedHost: localhost
       - name: tls
         port: 9093
         type: internal
@@ -38,7 +40,7 @@ spec:
         size: 100Gi
         deleteClaim: false
   zookeeper:
-    replicas: 1
+    replicas: 3
     storage:
       type: persistent-claim
       size: 100Gi
