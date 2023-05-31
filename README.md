@@ -13,7 +13,7 @@ In a terminal
 2. `cd gridappsd-dgss-app`
 3. `kubectl create namespace kafka`
 4. `kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka`
-5. `kubectl apply -f dgss-kafka.yaml -n kafka`
+5. `kubectl apply -f dgss-kafka.yml -n kafka`
 6. `kubectl wait kafka/my-cluster --for=condition=Ready --timeout=300s -n kafka`
 
 ### To run Python application on host machine's local environment
