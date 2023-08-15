@@ -18,7 +18,8 @@ handler.setFormatter(formatter)
 root.addHandler(handler)
 consumer_topic = 'my-topic'
 
-producer = KafkaProducer(bootstrap_servers='localhost:31402')
+producer_cluster_1 = KafkaProducer(bootstrap_servers='localhost:31402')
+producer_cluster_2 = KafkaProducer(bootstrap_servers='localhost:31403')
 
 
 DEFAULT_MESSAGE_PERIOD = 5
@@ -46,7 +47,11 @@ class SimulationMessages():
 
     def send_message(self, message):
         # Send message to Kafka consumer
-        producer.send(consumer_topic, json.dumps(message).encode('utf-8'))
+        #filter measurement id and create saperate topics 
+
+
+        producer_cluster_1.send(consumer_topic, json.dumps(message).encode('utf-8'))
+        producer_cluster_2.send(consumer_topic, json.dumps(message).encode('utf-8'))
 
 
 if __name__ == '__main__':
